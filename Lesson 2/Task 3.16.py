@@ -20,28 +20,26 @@ x0 = 2.4
 path = [x0]
 from scipy.optimize import minimize
 
-result = minimize(f, x0=x0, tol=1e-2, callback=get_path)
-x1 = result.x
+result = minimize(f, x0=1.5)
+x2 = result.x
 print(result)
-fun: -3.090047003364168
 
-
-hess_inv: np.array([[2.91066268]])
-jac: np.array([0.00171024])
+fun: 1.4145952559875395e-12
+hess_inv: np.array([[0.50122726]])
+jac: np.array([-2.36383401e-06])
 message: 'Optimization terminated successfully.'
-nfev: 12
+nfev: 14
 nit: 3
-njev: 6
+njev: 7
 status: 0
 success: True
-x: np.array([5.11767426])
+x: np.array([-1.18936759e-06])
 
-plt.scatter([x0], [f(x0)], color = 'tab:green')
-plt.plot(path, [f(i) for i in path], '--o', color="black", lw=0.75,
-markersize=2)
-plt.scatter([x1], [f(x1)], color = 'tab:red')
-plt.plot(x, f(x), zorder = 0)
-plt.xlim(0, 10)
-plt.ylim(-3.5, 2)
-
+plt.annotate("", xytext=(2.4, f(2.4)), xy=(x1, f(x1)),
+arrowprops=dict(arrowstyle="->"))
+plt.annotate("", xytext=(1.5, f(1.5)), xy=(x2, f(x2)),
+arrowprops=dict(arrowstyle="->"))
+plt.scatter([x1, x2], [f(x1), f(x2)], color = 'tab:red')
+plt.scatter([2.4, 1.5], [f(2.4), f(1.5)], color = 'tab:green')
+plt.plot(x, f(x), zorder=0)
 plt.show()
