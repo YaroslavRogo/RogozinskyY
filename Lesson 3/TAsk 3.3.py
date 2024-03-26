@@ -1,8 +1,18 @@
+from self import self
+
+
 class House:
     def  __init__(self, _area, _price):
         self._area = _area
         self._price = _price
 
+    def final_price(self, discount):
+       return self._price * (100 - discount)/100
+
+class SmallHouse(House):
+    def  __init__(self, _area, _price, _obj_house = 40):
+        super().__init__(_area, _price)
+        self._obj_house = _obj_house
     def final_price(self, discount):
        return self._price * (100 - discount)/100
 
@@ -42,11 +52,19 @@ class Human:
             self.__make_deal(actual_price, house)
 
 
-
-
-
+Human.default_info()
 
 human = Human()
+
 human.info()
-g=0
+
+small_house = SmallHouse(50, 100000)
+
+human.buy_house(small_house, 10)
+
+human.earn_money(150000)
+
+human.buy_house(small_house, 10)
+
+human.info()
 
