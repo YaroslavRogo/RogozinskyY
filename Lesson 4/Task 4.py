@@ -6,7 +6,7 @@ e.insert(0, "")
 
 def myClick():
 
-   hello = "Привет введённые данные: " + e.get()
+   hello = "Привет, введённые данные: " + e.get()
    myLabel = Label(root, text=hello)
    myLabel.pack()
 myButton = Button(root, text = "Нажмите", command=myClick, fg="blue", bg="#ffffff")
