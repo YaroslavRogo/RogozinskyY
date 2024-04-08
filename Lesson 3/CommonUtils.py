@@ -17,6 +17,7 @@ class CommonUtils:
         return slug
 
 
+"""
 class SlugConverter:
     def __init__(self):
         self.file_name = input('Введите название файла: ')
@@ -44,3 +45,4 @@ class SlugConverter:
 
 
 slug_converter = SlugConverter()
+"""

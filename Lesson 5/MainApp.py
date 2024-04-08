@@ -15,7 +15,7 @@ class MainApp(Tk):
 
         self.count = 3
         self.button1 = Tk.Button(self, text='Выбрать файл',
-                             width=25, command=self.new_window)
+                             width=25, command = self.new_window)
         self.button1.pack()
         self.button2 = Tk.Button(self, text='Визуализация',
                              width=25, command=self.new_info_window)
@@ -23,7 +23,7 @@ class MainApp(Tk):
 
         position = {"relx": 0.6, "rely": 0.01}
         self.button1.place(relx=0.1, rely=0.01)
-        self.button1.place(relx=0.1, rely=0.011)
+        self.button2.place(relx=0.1, rely=0.011)
         item = 0
 
     def __init__(self, *arg, **kwarg):
