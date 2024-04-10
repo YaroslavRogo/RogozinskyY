@@ -91,6 +91,7 @@ class Click(tk.Tk):
 
 
 click = Click()
+click.title("Калькулятор")
 click.geometry("300x500")
 click.resizable(False, False)
 click.mainloop()
