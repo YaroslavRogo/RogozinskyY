@@ -80,8 +80,8 @@ button_exit = tk.Button(root, text="Exit", command=exit_program)
 
 # Пакуем кнопки с использованием grid
 button_back.grid(row=1, column=0, padx=10, pady=10)
-button_forward.grid(row=1, column=1, padx=10, pady=10)
-button_exit.grid(row=1, column=2, padx=10, pady=10)
+button_forward.grid(row=1, column=2, padx=10, pady=10)
+button_exit.grid(row=1, column=1, padx=10, pady=10)
 
 # Создаем информационный виджет
 status_label = tk.Label(root, text="", bd=1, relief=tk.SUNKEN, anchor=tk.E)
