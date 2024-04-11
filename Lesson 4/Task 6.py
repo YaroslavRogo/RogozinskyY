@@ -6,7 +6,7 @@ root = tk.Tk()
 root.title("Photo Viewer")
 
 photo_images = []
-current_index = 0
+c_index = 0
 
 def create_photo_images():
     global photo_images
@@ -23,28 +23,28 @@ def create_photo_images():
     show_image(0)
 
 def show_image(idx):
-    global current_image_label, photo_images, current_index
+    global current_image_label, photo_images, c_index
 
     idx = max(0, min(idx, len(photo_images) - 1))
-    if idx == current_index:
+    if idx == c_index:
         return
 
-    current_index = idx
+    c_index = idx
 
     current_image_label.config(image=photo_images[idx])
 
     status_label.config(text=f"Фотография {idx+1}/{len(photo_images)}")
 
-    button_backward.config(state=tk.DISABLED if current_index == 0 else tk.NORMAL)
-    button_forward.config(state=tk.DISABLED if current_index == len(photo_images) - 1 else tk.NORMAL)
+    button_backward.config(state=tk.DISABLED if c_index == 0 else tk.NORMAL)
+    button_forward.config(state=tk.DISABLED if c_index == len(photo_images) - 1 else tk.NORMAL)
 
 def backward():
-    global current_index
-    show_image(current_index - 1)
+    global c_index
+    show_image(c_index - 1)
 
 def forward():
-    global current_index
-    show_image(current_index + 1)
+    global c_index
+    show_image(c_index + 1)
 
 def exit_program():
     root.quit()
