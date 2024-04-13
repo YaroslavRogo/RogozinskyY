@@ -66,7 +66,11 @@ current_image_label.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 root.rowconfigure(0, weight=1)
 root.columnconfigure(0, weight=1)
 
-root.bind("<Map>", lambda event: create_photo_images())
+root.bind("<Map>", lambda event: create_photo_images()) # другой метод
+
+# Иконка
+icon_path = "test_axe.ico"
+root.iconbitmap(icon_path)
 
 root.geometry("700x700")
 
